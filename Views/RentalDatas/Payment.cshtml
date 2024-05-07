@@ -1,0 +1,81 @@
+﻿@model WebApplication1.Models.Payment
+
+<h4>Payment</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Payment">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+         
+            <div class="form-group">
+                <label asp-for="FullName" class="control-label"></label>
+                <input asp-for="FullName" class="form-control" />
+                <span asp-validation-for="FullName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Email" class="control-label"></label>
+                <input asp-for="Email" class="form-control" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Address" class="control-label"></label>
+                <input asp-for="Address" class="form-control" />
+                <span asp-validation-for="Address" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="City" class="control-label"></label>
+                <input asp-for="City" class="form-control" />
+                <span asp-validation-for="City" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="State" class="control-label"></label>
+                <input asp-for="State" class="form-control" />
+                <span asp-validation-for="State" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PostalCode" class="control-label"></label>
+                <input asp-for="PostalCode" class="form-control" />
+                <span asp-validation-for="PostalCode" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Country" class="control-label"></label>
+                <input asp-for="Country" class="form-control" />
+                <span asp-validation-for="Country" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CreditCard" class="control-label"></label>
+                <input asp-for="CreditCard" class="form-control" />
+                <span asp-validation-for="CreditCard" class="text-danger"></span>
+          </div>
+            <div class="form-group">
+                <label asp-for="ExpMonth" class="control-label"></label>
+                <input asp-for="ExpMonth" class="form-control" />
+                <span asp-validation-for="ExpMonth" class="text-danger"></span>
+           </div>
+            <div class="form-group">
+                <label asp-for="ExpYear" class="control-label"></label>
+                <input asp-for="ExpYear" class="form-control" />
+                <span asp-validation-for="ExpYear" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CVV" class="control-label"></label>
+                <input asp-for="CVV" class="form-control" />
+                <span asp-validation-for="CVV" class="text-danger"></span>
+            </div>
+        </form>
+    </div>
+
+</div>
+<form asp-action="Payment">
+<div class="form-group">
+        <input type="hidden" asp-for="Id" />
+    <input type="submit" value="Pay" class="btn btn-primary" />
+</div>
+</form>
+<div>
+    <a asp-action="Home">Back to Home Page</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

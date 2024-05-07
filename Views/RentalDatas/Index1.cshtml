@@ -1,0 +1,40 @@
+﻿@model IEnumerable<WebApplication1.Models.RentalData>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Searched Results</h1>
+
+
+
+
+
+
+@foreach (var item in Model)
+{
+
+    <p style="font-size:xx-large">@Html.DisplayFor(modelItem => item.Name)</p>
+
+
+    <p>
+        @Html.DisplayFor(modelItem => item.Description)
+    </p>
+
+
+
+    <p style="font-size:large">
+        Rs.@Html.DisplayFor(modelItem => item.Prize)/24hrs
+    </p>
+
+
+    <p>
+        Tags: @Html.DisplayFor(modelItem => item.Tags)
+    </p>
+
+    <a asp-action="Edit" asp-route-id="@item.Id">Edit</a>
+    <a asp-action="Details" asp-route-id="@item.Id">Details</a>
+    <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+    <a class="btn btn-primary" style="margin-left:20px" asp-action="Use" asp-route-id="@item.Id">Use</a>
+
+}
+
